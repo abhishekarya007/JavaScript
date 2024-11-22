@@ -1,3 +1,3 @@
 # JavaScript
 
-# Let's do it
+- DataTypes
