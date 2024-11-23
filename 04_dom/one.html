@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - 1</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <div>
+      <h1 id="title" class="heading">
+        DOM learning on Chai aur code
+        <span style="display: none">test text</span>
+      </h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="text" name="" id="" value="hii" />
+
+      <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    let fname = "Abhishek";
+    let lName = "Kumar";
+    const heading = document.getElementById("title");
+    heading.innerHTML = `DOM Manipulation by ${fname} ${this.lName}`;
+    // heading.innerText = "DOM Manipulation 2";
+    // heading.textContent = "DOM Manipulation 3";
+
+    //change input value
+    const input = document.getElementsByTagName("input"); //return HTML Collection
+
+    input[0].style.backgroundColor = "black";
+    input[0].style.color = "white";
+    input[0].style.fontSize = "10px";
+    input[0].style.padding = "10px";
+
+    console.log(input[0].setAttribute("value", "Please Enter Your Name"));
+    ////////////
+
+    console.log(input[0].setAttribute("id", "input"));
+
+    document.getElementById("input").style.display = "none";
+
+    const itemList = document.getElementsByClassName("list-item"); // returns HTML Collection doesb't have forEach method
+    console.log(itemList);
+    const itemListArr = Array.from(itemList);
+    // console.log(itemListArr);
+
+    const itemListQuery = document.querySelectorAll(".list-item"); //returns NodeList it has forEach method
+    itemListQuery[1].style.backgroundColor = "red";
+    console.log(itemListQuery);
+  </script>
+</html>
