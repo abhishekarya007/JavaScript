@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - 3</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <h1 id="counter">Counter : 0</h1>
+    <button id="start" style="height: 20px; width: 100px">Start</button>
+    <button id="end" style="height: 20px; width: 100px">End</button>
+  </body>
+  <script>
+    let count = 0;
+    const counter = document.getElementById("counter");
+    const span = document.createElement("span");
+    const start = document.getElementById("start");
+    const end = document.getElementById("end");
+    let stopInter;
+
+    start.addEventListener("click", () => {
+      stopInter = setInterval(() => {
+        count++;
+
+        counter.innerHTML = `<span>Counter : ${count}</span>`;
+      }, 1000);
+      start.setAttribute("disabled", "");
+    });
+
+    end.addEventListener("click", () => {
+      clearInterval(stopInter);
+      start.removeAttribute("disabled", "");
+      counter.innerHTML = "Counter : 0";
+    });
+  </script>
+</html>

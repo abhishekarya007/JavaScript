@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - 1</title>
+  </head>
+  <body style="background-color: #212121; color: #ffff">
+    <h1 id="click1" onclick="alert('click Me 1')">Click Me !!</h1>
+    <h1 id="click2">Click Me 2 !!</h1>
+    <h1 id="click3">Click Me 3 !!</h1>
+  </body>
+  <script>
+    const clickMe2 = (document.getElementById("click2").onclick = () =>
+      alert("click Me 2"));
+
+    //this is the modern way
+    const clickMe = document
+      .getElementById("click3")
+      .addEventListener("click", () => alert("click Me 3"));
+  </script>
+</html>
